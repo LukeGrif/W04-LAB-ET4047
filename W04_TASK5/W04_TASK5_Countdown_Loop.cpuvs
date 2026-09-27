@@ -1,7 +1,0 @@
-        LOD N       ; Load N into the accumulator
-LOOP:   SUB #1      ; Subtract 1 (decrement)
-        STO N       ; Store the new value back into N
-        CMP #0      ; Compare with 0
-        JNZ LOOP    ; If not zero, repeat the loop
-        HLT         ; N reached 0: halt
-N:      6           ; Starting value for the countdown

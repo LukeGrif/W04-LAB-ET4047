@@ -1,0 +1,18 @@
+        LOD A       ; [A] -> ACC
+        ADD B       ; ACC + [B] -> ACC
+        STO SUM     ; ACC -> [SUM]
+        HLT         ; Halt execution
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+A:      3           ; address 30
+B:      4           ; address 32
+SUM:    0           ; address 34 (7 after execution)

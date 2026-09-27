@@ -1,0 +1,10 @@
+        LOD A       ; [A] -> ACC
+        STO TEMP    ; ACC -> [TEMP]   keep a copy of A
+        LOD B       ; [B] -> ACC
+        STO A       ; ACC -> [A]      A = old B
+        LOD TEMP    ; [TEMP] -> ACC
+        STO B       ; ACC -> [B]      B = old A
+        HLT
+A:      3
+B:      8
+TEMP:   0

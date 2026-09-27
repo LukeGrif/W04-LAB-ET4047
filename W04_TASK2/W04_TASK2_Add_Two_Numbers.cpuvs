@@ -1,7 +1,0 @@
-        LOD A       ; Load the first number (A) into the accumulator
-        ADD B       ; Add the second number (B) to the accumulator
-        STO SUM     ; Store the result into SUM
-        HLT         ; Halt the program
-A:      3           ; First number
-B:      4           ; Second number
-SUM:    0           ; Will hold the result (3 + 4 = 7)

@@ -1,0 +1,11 @@
+        LOD X       ; [X] -> ACC
+        CMP #0      ; ACC == 0?
+        JZ ISZERO   ; If yes, jump to ISZERO
+        LOD #0      ; ELSE: 0 -> [FLAG]
+        STO FLAG
+        JMP END
+ISZERO: LOD #1      ; THEN: 1 -> [FLAG]
+        STO FLAG
+END:    HLT
+X:      0
+FLAG:   0

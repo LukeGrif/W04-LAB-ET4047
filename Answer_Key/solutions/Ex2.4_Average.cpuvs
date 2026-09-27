@@ -1,0 +1,10 @@
+        LOD A       ; [A] -> ACC
+        ADD B       ; ACC + [B] -> ACC
+        ADD C       ; ACC + [C] -> ACC   (21)
+        DIV #3      ; ACC / #3 -> ACC
+        STO AVG     ; ACC -> [AVG]
+        HLT
+A:      4
+B:      7
+C:      10
+AVG:    0

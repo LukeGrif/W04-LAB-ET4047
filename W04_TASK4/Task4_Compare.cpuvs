@@ -1,0 +1,18 @@
+        LOD A       ; [A] -> ACC
+        CMP B       ; ACC == [B]?
+        JNZ NOTEQ   ; If not, jump to NOTEQ
+        LOD #1      ; THEN: #1 -> ACC
+        STO RESULT  ;       ACC -> [RESULT]
+        JMP END     ;       Jump to END
+NOTEQ:  LOD #2      ; ELSE: #2 -> ACC
+        STO RESULT  ;       ACC -> [RESULT]
+END:    HLT         ; Halt execution
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+A:      4           ; address 30
+B:      4           ; address 32 (try changing)
+RESULT: 0           ; address 34

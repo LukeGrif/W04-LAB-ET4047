@@ -1,0 +1,11 @@
+        LOD X       ; [X] -> ACC
+        CMP #10     ; ACC - 10: negative when X < 10 (sets N)
+        JN LESS     ; If X < 10, jump to LESS
+        LOD #0      ; ELSE: 0 -> [SMALL]
+        STO SMALL
+        JMP END
+LESS:   LOD #1      ; THEN: 1 -> [SMALL]
+        STO SMALL
+END:    HLT
+X:      7
+SMALL:  0

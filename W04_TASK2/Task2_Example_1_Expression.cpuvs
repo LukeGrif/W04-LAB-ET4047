@@ -1,0 +1,19 @@
+; Calculate expression: W = (3+4*5)*(2*3-1)*2
+; X = 3+4*5
+; Y = 2*3-1
+; W = X*Y*2
+        LOD #4      ; Find X = 3+4*5
+        MUL #5
+        ADD #3
+        STO X
+        LOD #2      ; Find Y = 2*3-1
+        MUL #3
+        SUB #1
+        STO Y
+        MUL X       ; Find X*Y
+        MUL #2      ; Find X*Y*2
+        STO W       ; Save result to W
+        HLT
+X:      0
+Y:      0
+W:      0

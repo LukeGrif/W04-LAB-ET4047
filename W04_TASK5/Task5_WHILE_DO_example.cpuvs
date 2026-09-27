@@ -1,0 +1,18 @@
+        LOD #0      ; 0 -> ACC
+        STO SUM     ; 0 -> [SUM]
+        STO COUNT   ; 0 -> [COUNT]
+WHILE:  LOD COUNT   ; [COUNT] -> ACC
+        CMP MAX     ; ACC == [MAX]?
+        JZ ENDWHILE ; If yes, jump to ENDWHILE
+        ADD #1      ; ACC + 1 -> ACC
+        STO COUNT   ; ACC -> [COUNT]   (COUNT++)
+        ADD SUM     ; ACC + [SUM] -> ACC
+        STO SUM     ; ACC -> [SUM]
+        JMP WHILE   ; Jump to WHILE
+ENDWHILE: HLT       ; Halt execution
+        NOP
+        NOP
+        NOP
+MAX:    3
+COUNT:  0
+SUM:    0

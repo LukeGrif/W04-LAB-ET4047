@@ -1,0 +1,18 @@
+        LOD N       ; [N] -> ACC
+LOOP:   SUB #1      ; ACC - #1 -> ACC
+        STO N       ; ACC -> [N]
+        CMP #0      ; ACC == 0?
+        JNZ LOOP    ; If not, jump back to LOOP
+        HLT         ; Halt execution
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+N:      6           ; address 34 (0 after execution)

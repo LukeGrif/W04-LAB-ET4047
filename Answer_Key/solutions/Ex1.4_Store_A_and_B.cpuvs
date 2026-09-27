@@ -1,0 +1,7 @@
+        LOD #5      ; #5 -> ACC
+        STO A       ; ACC -> [A]
+        LOD #9      ; #9 -> ACC
+        STO B       ; ACC -> [B]
+        HLT
+A:      0
+B:      0

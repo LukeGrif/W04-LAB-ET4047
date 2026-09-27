@@ -1,0 +1,18 @@
+        LOD #5      ; #5 -> ACC       (immediate: the number 5)
+        STO A       ; ACC -> [A]      (direct: store at address A)
+        LOD A       ; [A] -> ACC      (direct: load from address A)
+        HLT         ; Halt execution
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+A:      0           ; Data block: A is at address 34

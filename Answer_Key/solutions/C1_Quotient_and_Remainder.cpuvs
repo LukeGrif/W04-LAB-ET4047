@@ -1,0 +1,18 @@
+        LOD #0      ; Initialisation: 0 -> ACC
+        STO Q       ; 0 -> [Q]
+        LOD A       ; [A] -> ACC
+        STO R       ; [A] -> [R]
+LOOP:   LOD R       ; [R] -> ACC
+        CMP B       ; Test R < B?
+        JN DONE     ; If yes, go to DONE
+        SUB B       ; Otherwise ACC - [B] -> ACC
+        STO R       ;   ACC -> [R]
+        LOD Q       ;   [Q] -> ACC
+        ADD #1      ;   ACC + 1 -> ACC
+        STO Q       ;   ACC -> [Q]
+        JMP LOOP    ; Repeat while R >= B
+DONE:   HLT         ; Stop execution
+A:      17
+B:      5
+Q:      0           ; 3 after execution
+R:      0           ; 2 after execution

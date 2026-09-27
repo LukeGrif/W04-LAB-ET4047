@@ -1,0 +1,11 @@
+LOOP:   LOD RES     ; [RES] -> ACC
+        MUL N       ; ACC * [N] -> ACC
+        STO RES     ; ACC -> [RES]
+        LOD N       ; [N] -> ACC
+        SUB #1      ; ACC - 1 -> ACC
+        STO N       ; ACC -> [N]
+        CMP #1      ; ACC == 1?
+        JNZ LOOP    ; If not, repeat
+        HLT
+N:      5
+RES:    1

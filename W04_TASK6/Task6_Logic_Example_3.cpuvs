@@ -1,0 +1,16 @@
+        NOT A       ; NOT([A]) -> ACC
+        STO X       ; ACC -> [X]
+        NOT B       ; NOT([B]) -> ACC
+        STO Y       ; ACC -> [Y]
+        LOD X       ; [X] -> ACC
+        AND Y       ; ACC AND [Y] -> ACC
+        STO Z       ; ACC -> [Z]
+        NOT Z       ; NOT([Z]) -> ACC
+        STO W       ; ACC -> [W]
+        HLT
+A:      0
+B:      0
+X:      -1
+Y:      -1
+Z:      -1
+W:      0

@@ -1,0 +1,10 @@
+        LOD A       ; [A] -> ACC
+        AND B       ; ACC AND [B] -> ACC
+        STO T       ; ACC -> [T]
+        NOT T       ; NOT([T]) -> ACC
+        STO W       ; ACC -> [W]
+        HLT
+A:      -1
+B:      -1
+T:      0
+W:      0

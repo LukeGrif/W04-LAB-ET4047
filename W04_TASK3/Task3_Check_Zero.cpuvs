@@ -1,0 +1,18 @@
+        LOD X       ; [X] -> ACC
+        CMP #0      ; ACC == 0?  (sets Z if yes)
+        JNZ NOTZERO ; If not, jump to NOTZERO
+ZERO:   LOD #1      ; THEN: #1 -> ACC
+        STO FLAG    ;       ACC -> [FLAG]
+        JMP END     ;       Jump to END
+NOTZERO: LOD #0     ; ELSE: #0 -> ACC
+        STO FLAG    ;       ACC -> [FLAG]
+END:    HLT         ; Halt execution
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+        NOP
+X:      0           ; address 32 (test value)
+FLAG:   0           ; address 34

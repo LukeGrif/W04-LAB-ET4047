@@ -1,0 +1,11 @@
+        LOD A       ; [A] -> ACC
+        CMP B       ; ACC - [B]  (ACC still holds A afterwards)
+        JN BBIG     ; If A < B, jump to BBIG
+        STO MAX     ; THEN: ACC -> [MAX]  (A is still in ACC)
+        JMP END
+BBIG:   LOD B       ; ELSE: [B] -> ACC
+        STO MAX     ;       ACC -> [MAX]
+END:    HLT
+A:      4
+B:      9
+MAX:    0

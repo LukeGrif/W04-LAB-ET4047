@@ -1,0 +1,16 @@
+; W = (3+4*5)*(8/4-1)*4
+        LOD #4      ; Find X = 3+4*5
+        MUL #5
+        ADD #3
+        STO X
+        LOD #8      ; Find Y = 8/4-1
+        DIV #4
+        SUB #1
+        STO Y
+        MUL X       ; Find X*Y
+        MUL #4      ; Find X*Y*4
+        STO W       ; Save result to W
+        HLT
+X:      0
+Y:      0
+W:      0

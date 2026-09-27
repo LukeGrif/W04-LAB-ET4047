@@ -1,0 +1,16 @@
+        LOD X       ; [X] -> ACC
+        CMP #3      ; ACC == 3?
+        JNZ ELSE    ; If not, jump to ELSE
+THEN:   LOD #5      ; If yes, increase [Y] by 5
+        ADD Y
+        STO Y
+        JMP ENDIF   ; Jump to ENDIF
+ELSE:   LOD #2      ; Increase [Z] by 2
+        ADD Z
+        STO Z
+ENDIF:  LOD #8      ; 8 -> [X]
+        STO X
+        HLT         ; Halt execution
+X:      3
+Y:      0
+Z:      0

@@ -1,0 +1,8 @@
+        LOD N       ; [N] -> ACC
+LOOP:   CMP #0      ; WHILE N != 0   (test BEFORE decrementing)
+        JZ DONE     ; If N == 0, jump to DONE
+        SUB #1      ; ACC - 1 -> ACC
+        STO N       ; ACC -> [N]
+        JMP LOOP    ; Jump back to LOOP
+DONE:   HLT
+N:      0

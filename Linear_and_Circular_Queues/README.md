@@ -53,11 +53,33 @@ reuses freed space, so it can be filled and emptied indefinitely.
 
 ---
 
+## Solutions
+
+Each sketch is in its own folder. Paste it into `sketch.ino` in a Wokwi Arduino
+Nano project (or open it in the Arduino IDE) and watch the Serial Monitor at
+9600 baud.
+
+| Sketch | Covers |
+|--------|--------|
+| [`Queue_Lab_Solution_Task4_Shift`](Solutions/Queue_Lab_Solution_Task4_Shift/Queue_Lab_Solution_Task4_Shift.ino) | Task 2 `printQueue()`, Task 4 shift-on-dequeue fix, Task 3 test sequence and Task 6 stress test |
+| [`Queue_Lab_Solution_Task5_Circular`](Solutions/Queue_Lab_Solution_Task5_Circular/Queue_Lab_Solution_Task5_Circular.ino) | Task 5 circular (modulo) queue with a wrap-around-aware `printQueue()`, Task 3 test sequence and Task 6 stress test |
+| [`Queue_Lab_Solution_Task7_Interactive`](Solutions/Queue_Lab_Solution_Task7_Interactive/Queue_Lab_Solution_Task7_Interactive.ino) | Task 7 interactive circular queue: type `e <n>`, `f <n>`, `d`, `p` or `c` in the Serial Monitor |
+
+Expected final line of the Task 3 test sequence:
+
+| Version | Output |
+|---------|--------|
+| Task 4 (shift) | `front=0 rear=4 count=5  \| [30] [40] [50] [60] [70]` |
+| Task 5 (circular) | `front=2 rear=1 count=5  \| [60] [70] [30] [40] [50]` |
+
+Both versions finish the stress test with `Stress test finished. Failures: 0`.
+
+---
+
 ## Repository Contents
 
 | Path | Description |
 |------|-------------|
 | `W04_LAB_Linear_and_Circular_Queues.pdf` | The lab document |
 | `W04 LAB Linear and Circular Queues.docx` | Editable Word version |
-
-*The example sketches and task code will be added to this folder.*
+| `Solutions/` | Solution sketches for Tasks 4, 5 and 7 |

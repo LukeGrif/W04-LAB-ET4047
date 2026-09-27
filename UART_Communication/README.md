@@ -79,11 +79,33 @@ For this to work, both sides must use the **same baud rate**, **TX must go to RX
 
 ---
 
+## Solutions
+
+Each sketch is in its own folder so it opens directly in the Arduino IDE. The
+sketches that use SHA-1 include their own copy of `sha1_helper.h` (Appendix A of
+the lab document).
+
+| Task | Board A | Board B |
+|------|---------|---------|
+| 1 — Loopback | [`Task1_Loopback_Solution`](Solutions/Task1_Loopback_Solution/Task1_Loopback_Solution.ino) (single board, D1 → D0) | — |
+| 2 — Two boards | [`Task2_Sender_Solution`](Solutions/Task2_Sender_Solution/Task2_Sender_Solution.ino) | [`Task2_Receiver_Solution`](Solutions/Task2_Receiver_Solution/Task2_Receiver_Solution.ino) |
+| 3 — SHA-1 integrity | [`Task3_Sender_Solution`](Solutions/Task3_Sender_Solution/Task3_Sender_Solution.ino) | [`Task3_Receiver_Solution`](Solutions/Task3_Receiver_Solution/Task3_Receiver_Solution.ino) |
+| Extension — ACK/NACK | [`Extension_Sender_ACK`](Solutions/Extension_Sender_ACK/Extension_Sender_ACK.ino) | [`Extension_Receiver_ACK`](Solutions/Extension_Receiver_ACK/Extension_Receiver_ACK.ino) |
+
+**Libraries:** `SoftwareSerial` and `Wire` come with the Arduino IDE. Install
+**LiquidCrystal I2C** from the Library Manager for the LCD.
+
+**Tip for the extension:** the sender retries straight after each NACK, so all
+five retries happen within roughly 0.35 s. To see a successful retry, *tap* the
+tamper button briefly; holding it down for longer makes the sender give up on
+that message.
+
+---
+
 ## Repository Contents
 
 | Path | Description |
 |------|-------------|
 | `W04_LAB_UART_Communication_and_Data_Integrity.pdf` | The lab document |
 | `W04 LAB UART Communication and Data Integrity.docx` | Editable Word version |
-
-*Code files for each task will be added to this folder.*
+| `Solutions/` | Solution sketches for Tasks 1–3 and the extension |

@@ -29,6 +29,6 @@ Each folder holds the lab document (PDF and Word) and that lab's code files.
 | `index.html` | GitHub Pages landing page where you choose a lab |
 | `viewer.html` | Renders the chosen lab's PDF (`viewer.html?lab=cpu`, `uart` or `queues`) |
 | `CPU_Visual_Simulator/` | Option 1: handout, `.cpuvs` programs for Tasks 1–6 and the answer key |
-| `UART_Communication/` | Option 2: lab document |
-| `Linear_and_Circular_Queues/` | Option 3: lab document |
+| `UART_Communication/` | Option 2: lab document and solution sketches for Tasks 1–3 and the extension |
+| `Linear_and_Circular_Queues/` | Option 3: lab document and solution sketches for Tasks 4, 5 and 7 |
 | `assets/` | University logos used on the landing page |

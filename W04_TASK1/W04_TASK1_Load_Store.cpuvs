@@ -1,0 +1,5 @@
+        LOD #5      ; Load immediate constant 5 into the accumulator
+        STO A       ; Store the value (5) into memory location A
+        LOD A       ; Load the value from A back into the accumulator
+        HLT         ; Halt the program
+A:      0           ; Variable A (will hold the stored value)

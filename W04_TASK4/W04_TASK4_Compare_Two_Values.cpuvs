@@ -1,0 +1,12 @@
+        LOD A       ; Load A into the accumulator
+        CMP B       ; Compare the accumulator with the value at B
+        JNZ NOTEQ   ; If not equal, jump to NOTEQ
+        LOD #1      ; Equal: load 1
+        STO RESULT  ; Store 1 into RESULT
+        JMP END     ; Skip the else-part
+NOTEQ:  LOD #2      ; Not equal: load 2
+        STO RESULT  ; Store 2 into RESULT
+END:    HLT         ; Halt the program
+A:      4           ; First number
+B:      4           ; Second number (try changing this)
+RESULT: 0           ; 1 if equal, 2 if not

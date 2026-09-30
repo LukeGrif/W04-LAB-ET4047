@@ -2,13 +2,13 @@
 // Same wiring as Task 3. Uses the return wire B D11 (TX) -> A D10 (RX).
 #include <SoftwareSerial.h>
 #include <Wire.h>
-#include <LiquidCrystal_I2C.h>
+#include "lab_lcd.h"                     // I2C backpack LCD or Adafruit RGB LCD shield
 #include "sha1_helper.h"
 
 SoftwareSerial link(10, 11);             // RX = D10, TX = D11
 
 const uint8_t LCD_COLS = 16;
-LiquidCrystal_I2C lcd(0x20, LCD_COLS, 2);
+LabLCD lcd(LCD_COLS, 2);                 // finds whichever display is plugged in
 
 const uint8_t MAX_LEN = 64;              // message + '|' + 40 hex chars fits
 char buffer[MAX_LEN + 1];
@@ -85,6 +85,8 @@ void setup()
 
     lcd.init();
     lcd.backlight();
+    Serial.print(F("LCD: "));
+    Serial.println(lcd.name());          // which display was found
     lcdPrintLine(0, "Waiting...");
 }
 

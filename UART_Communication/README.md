@@ -35,7 +35,7 @@ detect whether anything was corrupted on the way.
 | Item | Qty |
 |------|-----|
 | Arduino Nano (classic) or Nano Every, on a breakout shield | 2 |
-| 16×2 LCD with I2C backpack (address `0x20`) | 1–2 |
+| 16×2 LCD with I2C backpack (address `0x20`), **or** Adafruit RGB LCD shield | 1–2 |
 | Jumper wires | ~10 |
 | USB cables | 2 |
 | Push button (Task 3 only) | 1 |
@@ -83,7 +83,8 @@ For this to work, both sides must use the **same baud rate**, **TX must go to RX
 
 Each sketch is in its own folder so it opens directly in the Arduino IDE. The
 sketches that use SHA-1 include their own copy of `sha1_helper.h` (Appendix A of
-the lab document).
+the lab document), and the sketches that use the LCD include `lab_lcd.h`
+(Appendix B).
 
 | Task | Board A | Board B |
 |------|---------|---------|
@@ -92,8 +93,25 @@ the lab document).
 | 3 — SHA-1 integrity | [`Task3_Sender_Solution`](Solutions/Task3_Sender_Solution/Task3_Sender_Solution.ino) | [`Task3_Receiver_Solution`](Solutions/Task3_Receiver_Solution/Task3_Receiver_Solution.ino) |
 | Extension — ACK/NACK | [`Extension_Sender_ACK`](Solutions/Extension_Sender_ACK/Extension_Sender_ACK.ino) | [`Extension_Receiver_ACK`](Solutions/Extension_Receiver_ACK/Extension_Receiver_ACK.ino) |
 
+**Either LCD works.** Every sketch that uses the LCD includes
+[`lab_lcd.h`](Solutions/Task2_Receiver_Solution/lab_lcd.h), which checks the I2C
+bus in `lcd.init()` and drives whichever display is plugged in:
+
+| Display | Chip | How it is recognised |
+|---------|------|----------------------|
+| 16×2 LCD with I2C backpack | PCF8574 at 0x20–0x27 (or PCF8574A at 0x38–0x3F) | answers on the bus, but has no registers to read back |
+| Adafruit RGB LCD shield | MCP23017 at 0x20 | a test value written to one of its registers reads back unchanged |
+
+Both displays can sit at address 0x20, so the address alone cannot tell them
+apart; the register test does. The receivers print the result to the Serial
+Monitor (for example `LCD: Adafruit RGB LCD shield`). The shield plugs straight
+onto the Uno-style breakout and uses the same SDA (A4) and SCL (A5) pins, so no
+wiring is needed.
+
 **Libraries:** `SoftwareSerial` and `Wire` come with the Arduino IDE. Install
-**LiquidCrystal I2C** from the Library Manager for the LCD.
+**both** LCD libraries from the Library Manager, whichever display you have:
+**LiquidCrystal I2C** (by Frank de Brabander) and **Adafruit RGB LCD Shield
+Library** (by Adafruit).
 
 **Tip for the extension:** the sender retries straight after each NACK, so all
 five retries happen within roughly 0.35 s. To see a successful retry, *tap* the

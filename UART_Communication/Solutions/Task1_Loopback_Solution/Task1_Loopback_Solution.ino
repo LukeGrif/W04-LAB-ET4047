@@ -2,7 +2,7 @@
 // Wiring: jumper from D1 (TX) to D0 (RX)
 // Works on both the classic Arduino Nano and the Nano Every.
 #include <Wire.h>
-#include <LiquidCrystal_I2C.h>
+#include "lab_lcd.h"                     // I2C backpack LCD or Adafruit RGB LCD shield
 
 // Choose the hardware UART on D0/D1 for this board:
 //   Nano Every   -> Serial1 (USB uses a separate channel)
@@ -15,7 +15,7 @@
 
 const uint8_t LCD_COLS = 16;
 const uint8_t LCD_ROWS = 2;
-LiquidCrystal_I2C lcd(0x20, LCD_COLS, LCD_ROWS);
+LabLCD lcd(LCD_COLS, LCD_ROWS);          // finds whichever display is plugged in
 
 const char* const messages[] = {"Hello", "Test", "Loop"};
 const uint8_t NUM_MESSAGES = sizeof(messages) / sizeof(messages[0]);

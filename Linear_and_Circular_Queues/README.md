@@ -1,11 +1,11 @@
-# Linear and Circular Queues (ET4047 · Week 04 · Option 3)
+# Linear and Circular Queues (ET4047 · Week 04 · Option 2)
 
 **Module:** ET4047 · **Author:** Luke Griffin
 **University of Limerick — Department of Electronic & Computer Engineering**
 
 📄 **View the full lab document online:** https://lukegrif.github.io/W04-LAB-ET4047/viewer.html?lab=queues
 
-> This is **Option 3** of the three Week 04 labs. See the [Week 04 overview](../README.md).
+> This is **Option 2** of the two Week 04 labs. See the [Week 04 overview](../README.md).
 
 ---
 

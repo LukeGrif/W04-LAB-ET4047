@@ -9,14 +9,13 @@
 
 ## Choose one lab
 
-There are **three lab options** this week. Pick **one** before you start and
+There are **two lab options** this week. Pick **one** before you start and
 complete that lab only.
 
 | Option | Lab | Platform | Folder |
 |--------|-----|----------|--------|
 | 1 | [CPU Visual Simulator Assembly](CPU_Visual_Simulator/README.md) — addressing modes, arithmetic, IF-THEN-ELSE, loops and bitwise logic in assembly | Browser (CPU Visual Simulator) | `CPU_Visual_Simulator/` |
-| 2 | [UART Communication and Data Integrity](UART_Communication/README.md) — UART loopback, two-board links and SHA-1 message hashing | 2× Arduino Nano + I2C LCD | `UART_Communication/` |
-| 3 | [Linear and Circular Queues](Linear_and_Circular_Queues/README.md) — array-based FIFO queues and fixing the linear queue's wasted space | Wokwi (Arduino Nano) | `Linear_and_Circular_Queues/` |
+| 2 | [Linear and Circular Queues](Linear_and_Circular_Queues/README.md) — array-based FIFO queues and fixing the linear queue's wasted space | Wokwi (Arduino Nano) | `Linear_and_Circular_Queues/` |
 
 Each folder holds the lab document (PDF and Word) and that lab's code files.
 
@@ -27,8 +26,7 @@ Each folder holds the lab document (PDF and Word) and that lab's code files.
 | Path | Description |
 |------|-------------|
 | `index.html` | GitHub Pages landing page where you choose a lab |
-| `viewer.html` | Renders the chosen lab's PDF (`viewer.html?lab=cpu`, `uart` or `queues`) |
+| `viewer.html` | Renders the chosen lab's PDF (`viewer.html?lab=cpu` or `queues`) |
 | `CPU_Visual_Simulator/` | Option 1: handout, `.cpuvs` programs for Tasks 1–6 and the answer key |
-| `UART_Communication/` | Option 2: lab document and solution sketches for Tasks 1–3 and the extension |
-| `Linear_and_Circular_Queues/` | Option 3: lab document and solution sketches for Tasks 4, 5 and 7 |
+| `Linear_and_Circular_Queues/` | Option 2: lab document and solution sketches for Tasks 4, 5 and 7 |
 | `assets/` | University logos used on the landing page |

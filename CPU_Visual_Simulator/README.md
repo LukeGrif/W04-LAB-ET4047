@@ -5,7 +5,7 @@
 
 📄 **View the full lab handout online:** https://lukegrif.github.io/W04-LAB-ET4047/viewer.html?lab=cpu
 
-> This is **Option 1** of the three Week 04 labs. See the [Week 04 overview](../README.md).
+> This is **Option 1** of the two Week 04 labs. See the [Week 04 overview](../README.md).
 
 ---
 
